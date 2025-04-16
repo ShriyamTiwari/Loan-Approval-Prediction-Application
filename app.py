@@ -5,14 +5,9 @@ import requests
 from backend import load_model, LoanInsightsGenerator
 from chatbot import initialize_chat_session, display_chat_history, handle_chat_interaction
 import os
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Get the API key
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 # Load the trained model pipeline
 MODEL_PATH = r"pipeline_lgbm.pkl"  # Update this path as needed
